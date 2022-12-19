@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.exercise {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.exercise .exercise-title {
+  color: green;
+  border-bottom: 1px solid blue;
+}
+.exercise > section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.exercise > section > article {
+  border: 1px solid green;
+  text-align: center;
+  padding: 15px;
+  /* Potevo anche evitare di assegnare la proprietà color al 
+  tag p ed assegnarla direttamente ad article, ma ho preferito fare così */
+}
+.exercise > section > article > p {
+  color: red;
+}
+.exercise > section > article:nth-child(odd) > p {
+  color: blue;
+}
+
+/*# sourceMappingURL=style.css.map */

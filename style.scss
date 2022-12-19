@@ -1,0 +1,41 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+
+.exercise {
+  border: 1px solid $color-primary;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  .exercise-title {
+    color: $color-tertiary;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  > section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    > article {
+      border: 1px solid $color-tertiary;
+      text-align: center;
+      padding: 15px;
+
+      /* Potevo anche evitare di assegnare la proprietà color al 
+      tag p ed assegnarla direttamente ad article, ma ho preferito fare così */
+      > p {
+        color: $color-primary;
+      }
+
+      &:nth-child(odd) {
+        > p {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+}

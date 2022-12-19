@@ -1,9 +1,20 @@
-# Develhope SASS Exercises
 
-### Exercises are divided by branch
+Create the layout displayed in sass_exercise_1_layout.jpg using the rules nesting and the Sass Variables.
 
-1. [Variables nesting](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_1_variables-nesting)
-2. [Mixin](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_2_mixin)
-3. [Functions Modules](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_3_functions-modules)
-4. [Selectors extend](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_4_selectors-extend)
-5. [Flow Control](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_5_flow-control)
+You should use the following colors:
+* red 
+* blue
+* green
+
+**Suggestion:**
+
+$color-primary: red;
+$color-tertiary: green;
+
+.exercise {
+border: 1px solid $color-primary;
+
+    .exercise-title {
+        color: $color-tertiary;
+    }
+}
