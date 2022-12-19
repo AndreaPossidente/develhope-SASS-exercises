@@ -1,0 +1,55 @@
+@use "variables" as v;
+@use "functions" as f;
+
+@mixin article-card($color, $border-color, $font-size: 1rem) {
+  color: $color;
+  border: f.rem(1) solid $border-color;
+  font-size: $font-size;
+  text-align: center;
+  padding: f.rem(v.$spacing);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.exercise {
+  border: f.rem(1) solid v.$color-primary;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: f.rem(v.$spacing);
+
+  .exercise-title {
+    color: v.$color-tertiary;
+    border-bottom: f.rem(1) solid v.$color-secondary;
+  }
+
+  > section:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    > article:nth-child(odd) {
+      @include article-card(
+        $color: v.$color-secondary,
+        $border-color: v.$color-tertiary
+      );
+    }
+    > article:nth-child(even) {
+      width: 100%;
+      @include article-card(
+        $color: v.$color-primary,
+        $border-color: v.$color-tertiary
+      );
+    }
+  }
+
+  > section:last-of-type {
+    margin-top: f.rem(v.$spacing);
+    width: 100%;
+    > article {
+      @include article-card(v.$color-tertiary, v.$color-secondary, f.rem(24));
+    }
+  }
+}

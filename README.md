@@ -1,9 +1,13 @@
-# Develhope SASS Exercises
 
-### Exercises are divided by branch
+Modify the exercise 2 code about mixin by creating a module for all declared variables.
+Then, create a module with a function. This function should accept a number as parameter and return the value converted into rem. 1rem is equal to 16px
+This function should be applied in the main stylesheet, so that the only sizing unit is rem.
 
-1. [Variables nesting](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_1_variables-nesting)
-2. [Mixin](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_2_mixin)
-3. [Functions Modules](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_3_functions-modules)
-4. [Selectors extend](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_4_selectors-extend)
-5. [Flow Control](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_5_flow-control)
+**Suggestion:**
+
+@function rem(...
+@return calc(...
+}
+
+@use "functions" as f;
+...
