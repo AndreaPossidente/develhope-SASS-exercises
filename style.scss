@@ -20,24 +20,39 @@
 
 .exercise {
   border: f.rem(1) solid v.$color-primary;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: f.rem(v.$spacing);
 
-  .h1-class {
+  > .h1-class {
+    @extend %text;
   }
 
-  > section:first-of-type {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    > article:nth-child(odd) {
-      @include article-card(
-        $color: v.$color-secondary,
-        $border-color: v.$color-tertiary
-      );
+  > .h2-class {
+    @extend %text;
+    padding: 1rem;
+    border: f.rem(1) solid v.$color-primary;
+  }
+
+  > section {
+    &:first-of-type {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      > article:nth-child(odd) {
+        @include article-card(
+          $color: v.$color-secondary,
+          $border-color: v.$color-tertiary
+        );
+      }
+    }
+    &:last-of-type {
+      margin-top: f.rem(v.$spacing);
+      width: 100%;
+      > article {
+        @include article-card(v.$color-tertiary, v.$color-secondary, f.rem(24));
+      }
     }
     > article:nth-child(even) {
       width: 100%;
@@ -45,14 +60,6 @@
         $color: v.$color-primary,
         $border-color: v.$color-tertiary
       );
-    }
-  }
-
-  > section:last-of-type {
-    margin-top: f.rem(v.$spacing);
-    width: 100%;
-    > article {
-      @include article-card(v.$color-tertiary, v.$color-secondary, f.rem(24));
     }
   }
 }
