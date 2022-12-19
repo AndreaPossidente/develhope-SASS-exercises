@@ -1,0 +1,56 @@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+
+@mixin article-card($color, $border-color, $font-size: 1rem) {
+  color: $color;
+  border: 1px solid $border-color;
+  font-size: $font-size;
+  text-align: center;
+  padding: 15px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.exercise {
+  border: 1px solid $color-primary;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  .exercise-title {
+    color: $color-tertiary;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  > section:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    > article:nth-child(odd) {
+      @include article-card(
+        $color: $color-secondary,
+        $border-color: $color-tertiary
+      );
+    }
+    > article:nth-child(even) {
+      width: 100%;
+      @include article-card(
+        $color: $color-primary,
+        $border-color: $color-tertiary
+      );
+    }
+  }
+
+  > section:last-of-type {
+    margin-top: 15px;
+    width: 100%;
+    > article {
+      @include article-card($color-tertiary, $color-secondary, 24px);
+    }
+  }
+}
