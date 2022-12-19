@@ -18,7 +18,7 @@
   border-bottom: f.rem(1) solid v.$color-secondary;
 }
 
-.exercise {
+div {
   border: f.rem(1) solid v.$color-primary;
   display: flex;
   flex-direction: column;
@@ -26,11 +26,11 @@
   align-items: center;
   padding: f.rem(v.$spacing);
 
-  > .h1-class {
+  > h1 {
     @extend %text;
   }
 
-  > .h2-class {
+  > h2 {
     @extend %text;
     padding: 1rem;
     border: f.rem(1) solid v.$color-primary;
@@ -45,6 +45,37 @@
           $color: v.$color-secondary,
           $border-color: v.$color-tertiary
         );
+      }
+    }
+    &:nth-of-type(2) {
+      margin-top: f.rem(15);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      > div {
+        padding: 0;
+        width: f.rem(45);
+        height: f.rem(45);
+        @for $var from 1 to 20 {
+          &:nth-child(#{$var}) {
+            background-color: darken(v.$color-white, $var * 5%);
+            color: lighten(v.$color-black, $var * 5%);
+            @if $var == 10 {
+              background-color: v.$color-secondary;
+              color: v.$color-primary;
+            }
+          }
+        }
+        $vals: "1rem" flex-start flex-start 1rem, "2rem" center flex-start 2rem,
+          "3rem" flex-start flex-start 3rem;
+        @each $classname, $justify, $align, $font-size in $vals {
+          &.fs-#{$classname} {
+            display: flex;
+            justify-content: $justify;
+            align-items: $align;
+            font-size: $font-size;
+          }
+        }
       }
     }
     &:last-of-type {
