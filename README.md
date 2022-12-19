@@ -1,9 +1,12 @@
-# Develhope SASS Exercises
 
-### Exercises are divided by branch
+Modify the exercise 3 code about functions using the parent selector `&` for nested classes. Style the `h2` that will have the same rules of `h1`, and an additional 1rem padding and a red border. In order to style the `h1` and `h2` use the extend method. 
 
-1. [Variables nesting](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_1_variables-nesting)
-2. [Mixin](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_2_mixin)
-3. [Functions Modules](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_3_functions-modules)
-4. [Selectors extend](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_4_selectors-extend)
-5. [Flow Control](https://github.com/AndreaPossidente/Develhope-SASS-Exercises/tree/ex_5_flow-control)
+**Suggestion:**
+
+%text {
+...
+}
+
+.h1-class {
+@extend %text;
+}
